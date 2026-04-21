@@ -1,0 +1,36 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "🌐 本地预览（Python http.server）",
+      "type": "shell",
+      "command": "python3 -m http.server 8000",
+      "options": { "cwd": "${workspaceFolder}/public" },
+      "isBackground": true,
+      "presentation": { "reveal": "always", "panel": "dedicated" },
+      "problemMatcher": []
+    },
+    {
+      "label": "✅ 提交前检查",
+      "type": "shell",
+      "command": "node ${workspaceFolder}/.vscode/preflight.mjs",
+      "presentation": { "reveal": "always", "clear": true },
+      "problemMatcher": []
+    },
+    {
+      "label": "🚀 一键提交（add + commit + push）",
+      "type": "shell",
+      "command": "git add -A && git commit -m \"${input:commitMsg}\" && git push",
+      "presentation": { "reveal": "always", "clear": true },
+      "problemMatcher": []
+    }
+  ],
+  "inputs": [
+    {
+      "id": "commitMsg",
+      "type": "promptString",
+      "description": "本次提交的说明（例如：submit: v1 快排可视化）",
+      "default": "update: 更新作业内容"
+    }
+  ]
+}

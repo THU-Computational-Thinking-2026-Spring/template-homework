@@ -1,0 +1,35 @@
+{
+  "editor.formatOnSave": true,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "liveServer.settings.root": "/public",
+  "liveServer.settings.port": 5500,
+  "gitlab.instanceUrl": "https://gitlab.com",
+  "gitlab.showPipelineUpdateNotifications": true,
+  "cSpell.words": [
+    "dijkstra",
+    "kruskal",
+    "quicksort",
+    "mergesort",
+    "backtracking",
+    "metadata",
+    "pinyin",
+    "Vibe",
+    "gitlab"
+  ]
+}

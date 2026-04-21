@@ -1,0 +1,12 @@
+{
+  "studentId": "TODO-学号",
+  "name": "TODO-姓名",
+  "projectTitle": "TODO-项目中文名",
+  "track": "A",
+  "category": "排序算法",
+  "tags": ["sorting", "visualization"],
+  "description": "一句话描述你的作品（60 字以内）",
+  "thumbnail": "thumbnail.png",
+  "video": "",
+  "submittedAt": "2025-06-06"
+}
