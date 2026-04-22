@@ -56,7 +56,7 @@ git push origin main
 ```
 
 - 访问 **项目主页 → CI/CD → Pipelines** 等待绿色 ✓（约 30~60 秒）
-- 访问 `https://cs-computational-thinking-2025.gitlab.io/<你的项目 path>/`
+- 访问 `https://thu-computational-thinking-2026-spring.gitlab.io/<你的项目 path>/`
 - 门户首页会在当晚自动刷新，或在你 push 后几分钟内刷新
 
 ## 本地预览

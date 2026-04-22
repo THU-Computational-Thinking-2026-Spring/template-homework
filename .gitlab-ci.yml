@@ -1,13 +1,22 @@
-# 学生作业 CI：仅把 public/ 目录发布到 GitLab Pages
+# 学生作业 CI：把 public/ 目录发布到 GitLab Pages
 # 基于官方模板 https://gitlab.com/pages/plain-html
 image: busybox
 
 pages:
   stage: deploy
   script:
-    - echo "Publishing public/ to GitLab Pages..."
-    - test -f public/index.html || (echo "ERROR: public/index.html 不存在，请把作业文件放到 public/ 下" && exit 1)
-    - test -f metadata.json || (echo "ERROR: metadata.json 不存在，请参考 README 填写" && exit 1)
+    - |
+      set -e
+      echo "Publishing public/ to GitLab Pages..."
+      if [ ! -f public/index.html ]; then
+        echo "ERROR: public/index.html does not exist. Please put your files under public/."
+        exit 1
+      fi
+      if [ ! -f metadata.json ]; then
+        echo "ERROR: metadata.json does not exist. Please fill in the template in the repo root."
+        exit 1
+      fi
+      echo "Checks passed."
   artifacts:
     paths:
       - public
