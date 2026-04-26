@@ -1,0 +1,49 @@
+# 学生作业 CI：检查 public/ 目录并发布到 GitHub Pages
+
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# 同一时间只允许一次部署
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check required files
+        run: |
+          set -e
+          echo "Publishing public/ to GitHub Pages..."
+          if [ ! -f public/index.html ]; then
+            echo "ERROR: public/index.html does not exist. Please put your files under public/."
+            exit 1
+          fi
+          if [ ! -f metadata.json ]; then
+            echo "ERROR: metadata.json does not exist. Please fill in the template in the repo root."
+            exit 1
+          fi
+          echo "Checks passed."
+
+      - uses: actions/configure-pages@v4
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./public
+
+      - id: deployment
+        uses: actions/deploy-pages@v4
