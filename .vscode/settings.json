@@ -19,8 +19,7 @@
   },
   "liveServer.settings.root": "/public",
   "liveServer.settings.port": 5500,
-  "gitlab.instanceUrl": "https://gitlab.com",
-  "gitlab.showPipelineUpdateNotifications": true,
+  "githubPullRequests.pullBranch": "never",
   "cSpell.words": [
     "dijkstra",
     "kruskal",
@@ -30,6 +29,6 @@
     "metadata",
     "pinyin",
     "Vibe",
-    "gitlab"
+    "github"
   ]
 }

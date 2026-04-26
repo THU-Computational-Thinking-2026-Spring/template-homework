@@ -1,7 +1,7 @@
 {
   "// description": "打开项目时 VSCode 会弹出窗口推荐安装以下插件",
   "recommendations": [
-    "gitlab.gitlab-workflow",
+    "github.vscode-pull-request-github",
     "ritwickdey.liveserver",
     "esbenp.prettier-vscode",
     "dbaeumer.vscode-eslint",

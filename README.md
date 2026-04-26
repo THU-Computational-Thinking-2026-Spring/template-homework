@@ -7,7 +7,10 @@
 
 ```text
 .
-├── .gitlab-ci.yml          # 【不要修改】自动发布到 GitLab Pages
+├── .github/
+│   └── workflows/
+│       ├── deploy.yml         # 【不要修改】自动发布到 GitHub Pages
+│       └── notify-portal.yml  # 【不要修改】push 后通知门户刷新
 ├── metadata.json           # 【必须填写】你的作品信息，门户会读取
 ├── README.md               # 可补充项目说明
 ├── .vscode/                # VSCode 推荐插件和任务
@@ -55,8 +58,8 @@ git commit -m "submit: 快速排序可视化 v1"
 git push origin main
 ```
 
-- 访问 **项目主页 → CI/CD → Pipelines** 等待绿色 ✓（约 30~60 秒）
-- 访问 `https://thu-computational-thinking-2026-spring.gitlab.io/<你的项目 path>/`
+- 访问仓库主页 → **Actions** 标签页，等待绿色 ✅（约 30~60 秒）
+- 作品 URL：`https://THU-Computational-Thinking-2026-Spring.github.io/<你的仓库名>/`
 - 门户首页会在当晚自动刷新，或在你 push 后几分钟内刷新
 
 ## 本地预览
@@ -79,6 +82,6 @@ python3 -m http.server -d public 8000
 
 ## 禁止事项
 
-- 不要修改 `.gitlab-ci.yml`
+- 不要修改 `.github/workflows/` 下的文件
 - 不要把 `node_modules/` 等大型目录 commit 进仓库
 - 不要直接复制他人的项目；AI 生成的代码须做修改并写入 AI 协作记录
