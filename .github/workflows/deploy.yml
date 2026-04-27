@@ -1,10 +1,16 @@
 # 学生作业 CI：检查 public/ 目录并发布到 GitHub Pages
+#
+# 触发方式：
+#   - 仅支持手动触发（workflow_dispatch）
+#   - 开发期间学生本地使用 Live Server 预览，无需部署 Pages
+#   - 截止日期后由助教通过 publish_after_deadline.py 脚本批量触发此 workflow
+#
+# 注意：私有仓库 Pages 需要 GitHub Team 及以上计划（助教在截止后升级计划再触发）
 
 name: Deploy to GitHub Pages
 
 on:
-  push:
-    branches: [main]
+  workflow_dispatch:
 
 permissions:
   contents: read

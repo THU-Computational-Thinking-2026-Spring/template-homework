@@ -9,9 +9,8 @@
 .
 ├── .github/
 │   └── workflows/
-│       ├── deploy.yml         # 【不要修改】自动发布到 GitHub Pages
-│       └── notify-portal.yml  # 【不要修改】push 后通知门户刷新
-├── metadata.json           # 【必须填写】你的作品信息，门户会读取
+│       └── deploy.yml         # 【不要修改】截止后由助教触发，将作品发布到 GitHub Pages
+├── metadata.json           # 【必须填写】你的作品信息，展示主页会读取
 ├── README.md               # 可补充项目说明
 ├── .vscode/                # VSCode 推荐插件和任务
 ├── docs/                   # 放 PDF 设计文档、视频链接等
@@ -32,7 +31,7 @@
   "name": "张三",
   "projectTitle": "快速排序可视化",
   "track": "A",                 // A=算法可视化, B=交互游戏
-  "category": "排序算法",        // 会作为门户的筛选标签
+  "category": "排序算法",        // 会作为展示主页的筛选标签
   "tags": ["quicksort", "sorting", "visualization"],
   "description": "交互式演示快速排序的递归与分区过程，支持速度与数组大小调节。",
   "thumbnail": "thumbnail.png",
@@ -50,7 +49,17 @@
   - Vite：在 `vite.config.ts` 里设置 `base: './'`，把 `dist/` 内容复制到 `public/`
   - Create React App：在 `package.json` 加 `"homepage": "."`，把 `build/` 内容复制到 `public/`
 
-### 3. 提交并查看效果
+### 3. 本地预览 → 提交
+
+**本地预览**（推荐用 VSCode Live Server 插件）：
+
+```bash
+# 或命令行
+python3 -m http.server -d public 8000
+# 浏览器打开 http://localhost:8000
+```
+
+**提交代码**：
 
 ```bash
 git add .
@@ -58,21 +67,8 @@ git commit -m "submit: 快速排序可视化 v1"
 git push origin main
 ```
 
-- 访问仓库主页 → **Actions** 标签页，等待绿色 ✅（约 30~60 秒）
-- 作品 URL：`https://THU-Computational-Thinking-2026-Spring.github.io/<你的仓库名>/`
-- 门户首页会在当晚自动刷新，或在你 push 后几分钟内刷新
-
-## 本地预览
-
-最简单的方式是用 VSCode 的 Live Server 插件（打开项目后会自动推荐安装）。
-
-或者命令行：
-
-```bash
-# Python 3 自带
-python3 -m http.server -d public 8000
-# 然后打开 http://localhost:8000
-```
+> 截止日期后，助教会统一触发 GitHub Pages 部署，你的作品将出现在展示主页上。  
+> 在此之前，请通过本地预览确认效果。
 
 ## 设计文档提交位置
 
