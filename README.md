@@ -81,4 +81,4 @@ git push origin main
 
 - 不要修改 `.github/workflows/` 下的文件
 - 不要把 `node_modules/` 等大型目录 commit 进仓库
-- 不要直接复制他人的项目；AI 生成的代码须做修改并写入 AI 协作记录
+- 不要直接复制他人的项目
